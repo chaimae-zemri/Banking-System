@@ -16,5 +16,6 @@ public class ClientJsonConverter {
     public static Client convertirDepuisJson(String json) throws JsonProcessingException {
         return objectMapper.readValue(json, Client.class);
     }
+
 }
 

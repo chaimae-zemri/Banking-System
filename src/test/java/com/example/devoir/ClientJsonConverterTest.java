@@ -38,9 +38,12 @@ class ClientJsonConverterTest {
             assertTrue(json.contains("\"email\":\"jean.dupont@example.com\""));
             assertTrue(json.contains("\"comptes\":[]"));
 
+            System.out.println(json);
         } catch (JsonProcessingException e) {
             fail("La conversion en JSON a échoué : " + e.getMessage());
         }
+
+
     }
 
 
@@ -50,7 +53,6 @@ class ClientJsonConverterTest {
     public void testConvertirDepuisJson() {
         // Préparer une chaîne JSON
         String json = "{\"numClient\":\"12345\",\"nom\":\"Dupont\",\"prenom\":\"Jean\",\"adresse\":\"123 Rue Exemple\",\"phone\":\"0123456789\",\"email\":\"jean.dupont@example.com\",\"comptes\":[]}";
-
         try {
             // Convertir le JSON en objet Client
             Client client = ClientJsonConverter.convertirDepuisJson(json);
@@ -65,6 +67,7 @@ class ClientJsonConverterTest {
             assertEquals("123 Rue Exemple", client.getAdresse());
             assertEquals("0123456789", client.getPhone());
             assertEquals("jean.dupont@example.com", client.getEmail());
+            System.out.println(client);
 
         } catch (JsonProcessingException e) {
             fail("La conversion depuis JSON a échoué : " + e.getMessage());
