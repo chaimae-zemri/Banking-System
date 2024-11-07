@@ -14,12 +14,12 @@ public class BanqueJsonConverter {
     }
 
 
-    // Convertir un objet Client en JSON
+    // Convertir un objet Banque en JSON
     public static String convertirEnJson(Banque banque) throws JsonProcessingException {
         return objectMapper.writeValueAsString(banque);
     }
 
-    // Convertir du JSON en un objet Client
+    // Convertir du JSON en un objet Banque
     public static Banque convertirDepuisJson(String json) throws JsonProcessingException {
         return objectMapper.readValue(json, Banque.class);
     }

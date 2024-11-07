@@ -76,6 +76,9 @@ public class Compte {
     }
 
 
+    public Compte() {
+    }
+
     public Compte(String numCompte) {
         this.numCompte = numCompte;
     }

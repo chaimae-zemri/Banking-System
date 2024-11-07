@@ -39,4 +39,39 @@ class BanqueJsonConverterTest {
         }
     }
 
+
+
+    @Test
+    public void testConvertirDepuisJson() {
+        // JSON d'entrée pour le test
+        String json = "{\"id\":\"B001\",\"pays\":\"France\",\"comptes\":[{\"numCompte\":\"C001\"},{\"numCompte\":\"C002\"}]}";
+
+        try {
+            // Convertir le JSON en objet Banque
+            Banque banque = BanqueJsonConverter.convertirDepuisJson(json);
+
+            // Vérifier que l'objet n'est pas nul
+            assertNotNull(banque);
+
+            // Afficher chaque attribut sur une ligne
+            System.out.println("Id: " + banque.getId());
+            System.out.println("Pays: " + banque.getPays());
+
+            System.out.println("Comptes:");
+            for (Compte compte : banque.getComptes()) {
+                System.out.println("  NumCompte: " + compte.getNumCompte());
+            }
+
+            // Vérifications des valeurs des attributs
+            assertEquals("B001", banque.getId());
+            assertEquals("France", banque.getPays());
+            assertEquals(2, banque.getComptes().size());
+            assertEquals("C001", banque.getComptes().get(0).getNumCompte());
+            assertEquals("C002", banque.getComptes().get(1).getNumCompte());
+
+        } catch (JsonProcessingException e) {
+            fail("La conversion depuis JSON a échoué : " + e.getMessage());
+        }
+    }
+
 }
