@@ -2,56 +2,53 @@ package com.example.devoir;
 
 import java.util.Date;
 import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-
-@NoArgsConstructor
-@AllArgsConstructor
-
-
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Compte {
 
     //les attributs
-    private String NumCompte;
-    private Date DateCrea;
-    private Date DateUpdate;
-    private String Devise;
+    private String numCompte;
+    private Date dateCrea;
+    private Date dateUpdate;
+    private String devise;
     private Client client;
     private Banque banque;
     private List<Transaction> transactions;
 
     //les getters and setters
+
+
     public String getNumCompte() {
-        return NumCompte;
+        return numCompte;
     }
 
     public void setNumCompte(String numCompte) {
-        NumCompte = numCompte;
+        this.numCompte = numCompte;
     }
 
     public Date getDateCrea() {
-        return DateCrea;
+        return dateCrea;
     }
 
     public void setDateCrea(Date dateCrea) {
-        DateCrea = dateCrea;
+        this.dateCrea = dateCrea;
     }
 
     public Date getDateUpdate() {
-        return DateUpdate;
+        return dateUpdate;
     }
 
     public void setDateUpdate(Date dateUpdate) {
-        DateUpdate = dateUpdate;
+        this.dateUpdate = dateUpdate;
     }
 
     public String getDevise() {
-        return Devise;
+        return devise;
     }
 
     public void setDevise(String devise) {
-        Devise = devise;
+        this.devise = devise;
     }
 
     public Client getClient() {
@@ -79,4 +76,18 @@ public class Compte {
     }
 
 
+    public Compte(String numCompte) {
+        this.numCompte = numCompte;
+    }
+
+
+    public Compte(String numCompte, Date dateCrea, Date dateUpdate , String devise, Client client, Banque banque, List<Transaction> transactions) {
+        this.numCompte = numCompte;
+        this.dateCrea = dateCrea;
+        this.dateUpdate = dateUpdate;
+        this.devise = devise;
+        this.client = client;
+        this.banque = banque;
+        this.transactions = transactions;
+    }
 }

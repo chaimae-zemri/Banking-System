@@ -1,47 +1,50 @@
 package com.example.devoir;
 
+import java.util.Date;
 import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
-
-@NoArgsConstructor
-@AllArgsConstructor
-
 
 public class Banque {
 
     //les attributs
-    private String Id;
+    private String id;
     private String pays;
-    private List<Compte> Comptes;
+    private List<Compte> comptes;
 
     //les getters and setters
 
+
     public String getId() {
-        return Id;
+        return id;
     }
 
     public void setId(String id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getPays() {
         return pays;
     }
 
+    public List<Compte> getComptes() {
+        return comptes;
+    }
+
+    public void setComptes(List<Compte> comptes) {
+        this.comptes = comptes;
+    }
+
     public void setPays(String pays) {
         this.pays = pays;
     }
 
-    public List<Compte> getComptes() {
-        return Comptes;
+
+    public Banque() {
     }
 
-    public void setComptes(List<Compte> comptes) {
-        Comptes = comptes;
+    public Banque(String id, String pays, List<Compte> comptes) {
+        this.id = id;
+        this.pays = pays;
+        this.comptes = comptes;
     }
-
-
 }
 
