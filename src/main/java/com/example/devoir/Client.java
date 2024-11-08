@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 
 
-@NoArgsConstructor
 public class Client {
 
     // les attributs
@@ -87,5 +86,6 @@ public class Client {
         this.comptes = comptes;
     }
 
-
+    public Client() {
+    }
 }

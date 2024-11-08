@@ -1,5 +1,6 @@
 package com.example.devoir;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -32,7 +33,6 @@ public final class Transaction {
     public List<Compte> getComptes() {
         return Comptes;
     }
-
 
 
     //le constructeur
