@@ -60,6 +60,19 @@ class ClientJsonConverterTest {
             // Vérifier que l'objet Client n'est pas nul
             assertNotNull(client);
 
+
+            System.out.println("numClient: " + client.getNumClient());
+            System.out.println("nom: " + client.getNom());
+            System.out.println("prenom: " + client.getPrenom());
+            System.out.println("adresse: " + client.getAdresse());
+            System.out.println("phone: " + client.getPhone());
+            System.out.println("email: " + client.getEmail());
+
+            System.out.println("Comptes:");
+            for (Compte compte : client.getComptes()) {
+                System.out.println("  NumCompte: " + compte.getNumCompte());
+            }
+
             // Vérifier les valeurs des attributs
             assertEquals("12345", client.getNumClient());
             assertEquals("Dupont", client.getNom());
@@ -67,7 +80,6 @@ class ClientJsonConverterTest {
             assertEquals("123 Rue Exemple", client.getAdresse());
             assertEquals("0123456789", client.getPhone());
             assertEquals("jean.dupont@example.com", client.getEmail());
-            System.out.println(client);
 
         } catch (JsonProcessingException e) {
             fail("La conversion depuis JSON a échoué : " + e.getMessage());

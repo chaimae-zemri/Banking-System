@@ -44,6 +44,8 @@ public final class Transaction {
     }
 
 
+
+
     private Type calculerType() {
         if (Comptes.size() == 1) {
             return null; // Cas invalide, au moins 2 comptes sont nécessaires pour une transaction
@@ -76,6 +78,9 @@ public final class Transaction {
 
         return null;
     }
+
+
+
 
 }
 

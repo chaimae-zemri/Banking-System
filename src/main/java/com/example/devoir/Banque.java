@@ -41,6 +41,11 @@ public class Banque {
     public Banque() {
     }
 
+    public Banque(String id, String pays) {
+        this.id = id;
+        this.pays = pays;
+    }
+
     public Banque(String id, String pays, List<Compte> comptes) {
         this.id = id;
         this.pays = pays;

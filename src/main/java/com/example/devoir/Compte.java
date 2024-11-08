@@ -83,6 +83,10 @@ public class Compte {
         this.numCompte = numCompte;
     }
 
+    public Compte(String numCompte, Banque banque) {
+        this.numCompte = numCompte;
+        this.banque = banque;
+    }
 
     public Compte(String numCompte, Date dateCrea, Date dateUpdate , String devise, Client client, Banque banque, List<Transaction> transactions) {
         this.numCompte = numCompte;

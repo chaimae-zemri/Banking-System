@@ -66,7 +66,24 @@ class CompteJsonConverterTest {
             // Call the method to convert JSON to a Compte object
             Compte compte = CompteJsonConverter.convertirDepuisJson(json);
 
-            System.out.println(compte);
+
+
+            System.out.println("numCompte: " + compte.getNumCompte());
+            System.out.println("dateCrea: " + compte.getDateCrea());
+            System.out.println("dateUpdate: " + compte.getDateUpdate());
+            System.out.println("devise: " + compte.getDevise());
+            Banque banque = compte.getBanque();
+            Client client = compte.getClient();
+            System.out.println("client: " + client.getNumClient());
+            System.out.println("banque: " + banque.getId());
+
+            System.out.println("Transactions:");
+            for (Transaction transaction : compte.getTransactions()) {
+                System.out.println("  NumCompte: " + transaction.getReference());
+            }
+
+
+
             // Assertions to verify the properties of the returned object
             assertNotNull(compte);
             assertEquals("12345", compte.getNumCompte());
